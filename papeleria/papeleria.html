@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabla Periódica con Modal</title>
+  <style>
+    * {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #tabla-periodica {
+        width: 1600px;
+        float: left;
+    }
+
+    .filas {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .columnas {
+        display: flex;
+        align-items: center;
+        width: 102px;
+        height: 131px;
+        margin: 2px;
+        margin-top: 10px;
+        margin-right: 8px;
+        margin-bottom: 15px;
+    }
+
+    .espacio1 {
+        width: 2000px;
+        margin-right: 112%;
+    }
+
+    #elemento {
+        border: solid;
+        width: 1040px;
+        height: 135px;
+        position: relative;
+        margin-left: 2px;
+        box-sizing: border-box;
+        margin-bottom: auto;
+        cursor: pointer; /* Cambia el cursor a pointer */
+    }
+
+    #elemento h6, #elemento h4, #elemento h2 {
+        position: absolute;
+        right: 10px;
+    }
+
+    #elemento h2 {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        background-color: white;
+        border-radius: 10px 0 0 10px;
+        border: none;
+        width: 50px;
+        margin: 0;
+        text-align: center;
+        margin-top: 55px;
+        margin-left: 11px;
+    }
+
+    #elemento h4 {
+        top: 8px;
+        margin-top: 0px;
+        font-size: x-large;
+    }
+
+    #elemento h6 {
+        top: 15px;
+    }
+
+    #elemento p {
+        font-size: small;
+        margin: 0px 0px;
+    }
+
+    #elemento h3 {
+        text-align: left;
+        font-size: 17px;
+        margin-top: 1px;
+        font-weight: bold;
+    }
+
+    .numero {
+        position: absolute;
+        top: -30px;
+        margin: 1px;
+        color: blue;
+    }
+
+    .numero h1 {
+        position: absolute;
+        margin-top: -12px;
+        margin-left: 33px;
+        margin-right: 12px;
+    }
+
+    .color-azul {
+        background-color: rgba(14, 163, 233, 0.555);
+    }
+
+    .color-rosadoClaro {
+        background-color: pink;
+    }
+
+    /* Modal */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0,0.4);
+        padding-top: 60px;
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: 5% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+    }
+
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div id="tabla-periodica">
+    <!-- Fila 1 -->
+    <div class="filas">
+        <div class="columnas">
+            <div id="elemento" class="color-azul elemento" data-name="Hidrógeno" data-number="1" data-symbol="H" data-weight="1.0079" data-boiling="-252.87" data-melting="-259.34" data-density="0.0899" data-electronegativity="2.20" data-ionization="13.59" data-electron-config="1s^2">
+                <div class="numero">
+                    <h1>IA</h1>
+                </div>
+                <p>1.0079</p>
+                <p>-259.34</p>
+                <p>-252.87</p>
+                <p>0.0899</p>
+                <p>2.20</p>
+                <p>13.59</p>
+                <p>1s^2</p>
+                <h3>Hidrógeno</h3>
+                <h4>1</h4>
+                <h6>1</h6>
+                <h2>H</h2>
+            </div>
+        </div>
+        <div class="columnas espacio1"></div>
+        <div class="columnas">
+            <div id="elemento" class="color-rosadoClaro elemento" data-name="Helio" data-number="2" data-symbol="He" data-weight="4.0026" data-boiling="-268.93" data-melting="-272.2" data-density="0.1786" data-electronegativity="0.00" data-ionization="24.587" data-electron-config="1s^2">
+                <div class="numero">
+                    <h1>IA</h1>
+                </div>
+                <p>4.0026</p>
+                <p>-272.2</p>
+                <p>-268.93</p>
+                <p>0.1786</p>
+                <p>0.00</p>
+                <p>24.587</p>
+                <p>1s^2</p>
+                <h3>Helio</h3>
+                <h4>2</h4>
+                <h6>2</h6>
+                <h2>He</h2>
+            </div>
+        </div>
+    </div>
+    <!-- /Fila 1 -->
+</div>
+
+<!-- Modal -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="modal-body"></div>
+    </div>
+</div>
+
+<script>
+ document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById("modal");
+    const span = document.getElementsByClassName("close")[0];
+    const modalBody = document.getElementById("modal-body");
+
+    document.querySelectorAll('.elemento').forEach(elemento => {
+        elemento.addEventListener('click', function() {
+            const name = this.getAttribute('data-name');
+            const number = this.getAttribute('data-number');
+            const symbol = this.getAttribute('data-symbol');
+            const weight = this.getAttribute('data-weight');
+            const boiling = this.getAttribute('data-boiling');
+            const melting = this.getAttribute('data-melting');
+            const density = this.getAttribute('data-density');
+            const electronegativity = this.getAttribute('data-electronegativity');
+            const ionization = this.getAttribute('data-ionization');
+            const electronConfig = this.getAttribute('data-electron-config');
+
+            modalBody.innerHTML = `
+                <h2>${name} (${symbol})</h2>
+                <p>Número Atómico: ${number}</p>
+                <p>Peso Atómico: ${weight}</p>
+                <p>Punto de Ebullición: ${boiling} °C</p>
+                <p>Punto de Fusión: ${melting} °C</p>
+                <p>Densidad: ${density} g/cm³</p>
+                <p>Electronegatividad: ${electronegativity}</p>
+                <p>Primera Energía de Ionización: ${ionization} eV</p>
+                <p>Configuración Electrónica: ${electronConfig}</p>
+            `;
+            modal.style.display = "block";
+        });
+    });
+
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+});
+</script>
+
+</body>
+</html>

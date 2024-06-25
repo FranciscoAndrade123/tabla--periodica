@@ -1,0 +1,382 @@
+/* General Styles */
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+.Nombre-tabla {
+    text-align: center;
+    margin: 20px ;
+    margin-right: 52%;
+
+
+}
+
+.nombre h1 {
+    font-size: 78px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+.nombre h3 {
+    font-size: 30px;
+    font-weight: normal;
+    color: #666;
+    margin-top: 1px;
+    margin-left: 380px;
+    color: red;
+}
+
+.clasificacion-grupos{
+    margin-left: 170%;
+    justify-content: end;
+   
+}
+
+
+#tabla-periodica {
+    width: 1600px;
+    float: left;
+}
+
+.filas {
+    display: flex;
+}
+
+
+.columnas {
+   display: flex;
+   align-items: center;
+    width: 102px;
+    height: 141px;
+    margin: 2px;
+    margin-top: 10px; 
+    margin-right: 8px; 
+    margin-bottom: 15px; 
+}
+
+.espacio1 {
+    width: 2000px;
+    margin-right: 112%;
+}
+
+.espacio2 {
+    width: 100%;
+    margin-right: 70%;
+}
+
+#elemento {
+    border: solid;
+    width: 2340px;
+    height: 163.7px;
+    position: relative;
+    margin-left: 1px;
+    top: 10px;
+    cursor: pointer;
+}
+.elemento {
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.elemento:hover {
+    background-color: rgba(202, 202, 202, 0.5);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); 
+}
+
+#fila-8{
+    justify-content: start;
+}
+
+
+#elemento h6, #elemento h4, #elemento h2 {
+    position: absolute;
+    right: 10px;
+}
+
+#elemento h2 {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: white;
+    border-radius: 20px 0 0 20px;
+    border: 3px solid #2c2b2b;
+    padding-top: -2px;
+    width: 50px;
+    margin: 0;
+    text-align: center;
+    margin-top: 55px;
+    margin-left: 11px;
+    margin-right: -5.5px;
+    font-size: 27px;
+}
+
+#elemento h4 {
+    top: 8px;
+    margin-top: 0px;
+    font-size: x-large;
+}
+
+#elemento h6 {
+    top: 35px;
+}
+
+#elemento p {
+    font-size: small;
+    margin: 0px 0px;
+}
+
+#elemento h3 {
+    text-align: left;
+    font-size: 17px;
+    margin-top: 1px;
+    font-weight: bold;
+}
+
+.tierras-raras {
+    margin-left: 447px;
+    margin-top: -5%;
+}
+
+.numero {
+    position: absolute; /* Establece una posición absoluta */
+    top: -35px; /* Ajusta el desplazamiento hacia arriba según sea necesario */
+    margin: 1px;
+}
+.numero h1{
+    font-size:23px;
+    bottom: -35px;
+    color: blue;
+    font-weight: bold;
+}
+
+.numero p {
+    position: absolute;
+    top: -30px; /* Ajusta la posición vertical del <p> */
+    left: 50%;
+    transform: translateX(-50%); /* Centra horizontalmente */
+    font-size: 24px; /* Tamaño de la fuente del <p> */
+    color: #333;
+
+}
+
+.numero h1 {
+    position: absolute;
+    margin-top: -12px;
+    margin-left: 33px;
+    margin-right: 12px;
+}
+
+.elemento-ejemplo {
+    position: absolute;
+    top: 27vh; /* 10% de la altura de la ventana del navegador */
+    left: 40vw; /* 40% del ancho de la ventana del navegador */
+}
+
+/* letras */
+.blanco{
+    color: white;
+    font-weight: bold;
+}
+
+.rojo{
+    color: red;
+    font-weight: bold;
+}
+
+
+
+#xd{
+    font-size: 20px;
+}
+
+/* fondos */
+.color-azul {
+    background-color: rgba(14, 163, 233, 0.555);
+}
+
+.color-piel{
+    background-color: rgba(245, 135, 61, 0.877);
+}
+
+.color-piel h4{
+    color: white;
+}
+
+.color-morado {
+    background-color: rgba(90, 0, 89, 0.904);
+}
+
+.color-morado h4 {
+    color: white;
+}
+
+.color-naranja {
+    background-color: rgb(243, 134, 9);
+}
+
+.color-naranja h4 {
+    color: white;
+}
+
+.color-amarillo {
+    background-color: yellow;
+}
+
+.color-amarillo h4{
+    color: red;
+}
+
+.color-azulClaro {
+    background-color: rgba(10, 147, 151, 0.486);
+}
+
+.color-gris {
+    background-color: darkgrey;
+}
+
+.color-verde {
+    background-color: rgba(21, 231, 21, 0.911);
+}
+
+.color-rosado {
+    background-color: rgba(190, 10, 40, 0.884);
+}
+
+.color-rosado  h4{
+    color: white;
+}
+
+.color-rosadoClaro {
+    background-color: pink;
+}
+
+.color-rosadoClaro h4 {
+   color: white;
+}
+
+
+.circulo {
+    width: 8px; /* Ancho del círculo */
+    height: 8px; /* Altura del círculo */
+    background-color: red; /* Color de fondo rojo */
+    border-radius: 50%; /* Hace que el div tenga forma de círculo */
+    display: inline-block; /* Permite que los círculos estén en línea con el texto */
+    margin-right: 2px; /* Espacio entre los círculos y el texto */
+}
+
+
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #000000;
+    float: right;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#ejemplo{
+    border: solid;
+    width: 250px;
+    height: 210px;
+    position: relative;
+    margin-left: 1px;
+    top: 10px;
+    cursor: pointer;
+    padding: 12px;
+    justify-content: center;
+}
+
+.ejemplo {
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.ejemplo:hover {
+    background-color: rgba(202, 202, 202, 0.5);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); 
+}
+
+
+
+
+#ejemplo h6, #ejemplo h4, #ejemplo h2 {
+    position: absolute;
+    right: 10px;
+}
+
+#ejemplo h2 {
+    position: absolute;
+    top: 35px;
+    right: 0px;
+    background-color: white;
+    border-radius: 30px 0 0 30px;
+    border: 3px solid #2c2b2b;
+    padding-top: -2px;
+    width: 80px;
+    margin: 0;
+    text-align: center;
+    margin-top: 55px;
+    margin-left: 1px;
+    font-size: 57px;
+}
+
+#ejemplo h4 {
+    top: 8px;
+    margin-top: 0px;
+    font-size: 30px;
+  
+}
+
+#ejemplo h6 {
+    top: 55px;
+    font-size: 20px;
+ 
+}
+
+#ejemplo p {
+    font-size:large;
+    margin: 0px ;
+    text-align: left;
+    margin-top: -7px;
+}
+
+#ejemplo h3 {
+    text-align: left;
+    font-size: 27px;
+    margin-top: 1px;
+    font-weight: bold;
+}
+
+.numero-ejemplo h1{
+    font-size:35px;
+    color: blue;
+    font-weight: bold;
+    margin-bottom: -12px;
+}
+
+.flecha1 {
+  margin-left: 522px;
+ margin-top: 100px;
+}
+
+.flecha-parte1{
+   float: inline-end;
+   margin-right: 122px;
+   margin-top: 55px;
+}
+
+.flecha-parte1 p{
+   margin-bottom: 1px;
+}
